@@ -325,6 +325,10 @@ public class TreeModule extends ConfigurableWorldModule {
 		public GroundState getGroundState() {
 			return GroundState.ON;
 		}
+
+		public VectorXYZ getPos() {
+			return getBase();
+		}
 		
 		@Override
 		public AxisAlignedBoundingBoxXZ getAxisAlignedBoundingBoxXZ() {

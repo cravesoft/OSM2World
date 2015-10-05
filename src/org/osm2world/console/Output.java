@@ -33,6 +33,7 @@ import org.osm2world.core.target.common.rendering.OrthoTilesUtil.CardinalDirecti
 import org.osm2world.core.target.common.rendering.Projection;
 import org.osm2world.core.target.obj.ObjWriter;
 import org.osm2world.core.target.povray.POVRayWriter;
+import org.osm2world.core.target.sdf.SdfWriter;
 import org.osm2world.core.util.functions.DefaultFactory;
 
 public final class Output {
@@ -151,6 +152,20 @@ public final class Output {
 						ObjWriter.writeObjFiles(outputFile,
 								results.getMapData(), results.getMapProjection(),
 								camera, projection, primitiveThresholdOBJ);
+					}
+					break;
+
+				case SDF:
+					Integer primitiveThresholdSDF =
+						config.getInteger("primitiveThresholdSDF", null);
+					if (primitiveThresholdSDF == null) {
+						SdfWriter.writeSdfFile(outputFile,
+								results.getMapData(), results.getMapProjection(),
+								camera, projection);
+					} else {
+						SdfWriter.writeSdfFiles(outputFile,
+								results.getMapData(), results.getMapProjection(),
+								camera, projection, primitiveThresholdSDF);
 					}
 					break;
 					

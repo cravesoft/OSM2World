@@ -33,6 +33,8 @@ import org.osm2world.viewer.control.actions.ExportObjAction;
 import org.osm2world.viewer.control.actions.ExportObjDirAction;
 import org.osm2world.viewer.control.actions.ExportPOVRayAction;
 import org.osm2world.viewer.control.actions.ExportScreenshotAction;
+import org.osm2world.viewer.control.actions.ExportSdfAction;
+import org.osm2world.viewer.control.actions.ExportSdfDirAction;
 import org.osm2world.viewer.control.actions.HelpControlsAction;
 import org.osm2world.viewer.control.actions.OpenOSMAction;
 import org.osm2world.viewer.control.actions.OrthoBoundsAction;
@@ -168,6 +170,8 @@ public class ViewerFrame extends JFrame{
 			subMenu.add(new ExportObjAction(this, data, messageManager, renderOptions));
 			subMenu.add(new ExportObjDirAction(this, data, messageManager, renderOptions));
 			subMenu.add(new ExportPOVRayAction(this, data, messageManager, renderOptions));
+			subMenu.add(new ExportSdfAction(this, data, messageManager, renderOptions));
+			subMenu.add(new ExportSdfDirAction(this, data, messageManager, renderOptions));
 			subMenu.add(new ExportScreenshotAction(this, data, messageManager, renderOptions));
 			subMenu.add(new StatisticsAction(this, data));
 			subMenu.add(new ExitAction());

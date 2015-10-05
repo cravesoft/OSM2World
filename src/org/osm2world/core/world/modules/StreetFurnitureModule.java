@@ -955,7 +955,7 @@ public class StreetFurnitureModule extends AbstractModule {
 		
 	}
 	
-	private static final class StreetLamp extends NoOutlineNodeWorldObject
+	public static final class StreetLamp extends NoOutlineNodeWorldObject
 			implements RenderableToAllTargets {
 		
 		public StreetLamp(MapNode node) {
@@ -966,6 +966,10 @@ public class StreetFurnitureModule extends AbstractModule {
 		public GroundState getGroundState() {
 			return GroundState.ON;
 		}
+
+	    public VectorXYZ getPos() {
+	    	return getBase();
+	    }
 		
 		@Override
 		public void renderTo(Target<?> target) {
